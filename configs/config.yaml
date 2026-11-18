@@ -25,3 +25,7 @@ processing:
 
 logging:
   level: "INFO"
+
+validation:
+  min_valid_fraction: 0.50
+  histogram_bins: 32
