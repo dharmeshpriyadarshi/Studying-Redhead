@@ -1,0 +1,27 @@
+project:
+  name: "Studying Redhead"
+  version: "0.1.0"
+  random_seed: 42
+
+paths:
+  raw_data: "data/raw"
+  interim_data: "data/interim"
+  processed_data: "data/processed"
+  logs: "logs"
+  artifacts: "artifacts"
+
+geospatial:
+  planet: "Mars"
+  datasets:
+    - MOLA
+    - CTX
+  target_crs: null
+  tile_size: 256
+
+processing:
+  batch_size: 8
+  num_workers: 2
+  preserve_raw_data: true
+
+logging:
+  level: "INFO"
