@@ -1,0 +1,39 @@
+# Environments
+.env
+.venv
+env/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS & Logs
+.DS_Store
+logs/
+*.log
+
+# Geospatial Data (Restricted)
+data/
+artifacts/
+*.tif
+*.tiff
+*.nc
+*.img
+
+# Machine Learning
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# Frontend
+node_modules/
+dist/
+.next/
+
+# Testing and tooling
+.pytest_cache/
+.ruff_cache/
+.coverage
