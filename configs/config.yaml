@@ -29,3 +29,14 @@ logging:
 validation:
   min_valid_fraction: 0.50
   histogram_bins: 32
+
+pipeline:
+  profile: "earth_smoke_test"
+  source_url: "https://raw.githubusercontent.com/rasterio/rasterio/master/tests/data/RGB.byte.tif"
+  raw_filename: "test_tile_01.tif"
+  expected_sha256: "D7CBE932C7ED74A627706A9E9DF99F706DF3E5ABC7D45A49E9D00677A6B09EB4"
+  source_crs: "EPSG:32618"
+  target_crs: "EPSG:3857"
+  resampling: "nearest"
+  warp_memory_limit_mb: 64
+  min_eligible_tiles: 1
