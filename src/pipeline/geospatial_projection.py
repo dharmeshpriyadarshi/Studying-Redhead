@@ -12,6 +12,11 @@ from rasterio.warp import (
 from src.logger import logger
 from src.exception import CustomException
 from src.utils.common import resolve_path
+from src.pipeline.planetary_crs import (
+    PlanetaryCRSError,
+    validate_target_body,
+    validate_reprojection_request,
+)
 
 
 class GeospatialProjector:
@@ -21,8 +26,15 @@ class GeospatialProjector:
         self,
         target_crs: str,
         resampling: Resampling = Resampling.nearest,
-        warp_memory_limit: int = 64
+        warp_memory_limit: int = 64,
+        target_body: str = "Earth"
     ):
+        self.target_body = validate_target_body(target_body)
+        if self.target_body == "Mars":
+            raise PlanetaryCRSError(
+                "Mars raster reprojection is not yet supported."
+            )
+
         self.target_crs = CRS.from_user_input(target_crs)
         self.resampling = resampling
         self.warp_memory_limit = warp_memory_limit
@@ -67,6 +79,12 @@ class GeospatialProjector:
 
                 if src.crs is None:
                     raise ValueError("Source raster has no CRS.")
+
+                validate_reprojection_request(
+                    target_body=self.target_body,
+                    source_crs=src.crs,
+                    target_crs=self.target_crs,
+                )
 
                 logger.info("Source raster: %s", source_path)
                 logger.info("Source CRS: %s", src.crs)

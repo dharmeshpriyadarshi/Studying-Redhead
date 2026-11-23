@@ -283,7 +283,8 @@ class DataPipeline:
         projector = GeospatialProjector(
             target_crs=settings["target_crs"],
             resampling=Resampling[settings["resampling"]],
-            warp_memory_limit=settings["warp_memory_limit_mb"]
+            warp_memory_limit=settings["warp_memory_limit_mb"],
+            target_body="Earth",
         )
 
         raw_path = Path(ingestion["raw_path"])
