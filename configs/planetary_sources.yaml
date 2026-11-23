@@ -1,0 +1,48 @@
+﻿schema_version: 1
+
+records:
+  - record_id: ctx_source_candidate
+    status: source_candidate
+    target_body: Mars
+    mission: Mars Reconnaissance Orbiter
+    instrument: CTX
+    modality: orbital_imagery
+    archive: NASA PDS
+    landing_page: "https://ode.rsl.wustl.edu/Mars/pagehelp/Content/Missions_Instruments/Mars%20Reconnaissance%20Orbiter%20%28MRO%29/CTX/CTX.htm"
+    collection_identifier: null
+    identifier_scheme: null
+    product_identifier: null
+    product_label_url: null
+    processing_level: null
+    spatial_reference: null
+    resolution: null
+    measurement_units: null
+    observation_time: null
+    footprint: null
+    calibration_status: not_assessed
+    usage_review: pending
+    sha256: null
+    notes: "Instrument reference only; individual CTX observation not selected."
+
+  - record_id: mola_meg128_candidate
+    status: source_candidate
+    target_body: Mars
+    mission: Mars Global Surveyor
+    instrument: MOLA
+    modality: topography_grid
+    archive: NASA PDS
+    landing_page: "https://pds.nasa.gov/ds-view/pds/viewCollection.jsp?identifier=urn%3Anasa%3Apds%3Amgs_mola_topography_derived%3Adata_meg128"
+    collection_identifier: "urn:nasa:pds:mgs_mola_topography_derived:data_meg128::1.0"
+    identifier_scheme: null
+    product_identifier: null
+    product_label_url: null
+    processing_level: null
+    spatial_reference: null
+    resolution: null
+    measurement_units: null
+    observation_time: null
+    footprint: null
+    calibration_status: not_assessed
+    usage_review: pending
+    sha256: null
+    notes: "PDS4 collection identified; individual elevation product not selected."
